@@ -78,6 +78,7 @@ $(document).ready(function() {
       if (i < words.length) {
         $span.append(words[i] + ' ');
         i++;
+        $chatBoard.scrollTop($chatBoard[0].scrollHeight);
         setTimeout(typeNextWord, delay);
       }
     }
