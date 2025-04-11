@@ -2,6 +2,8 @@ $(document).ready(function() {
   const electron = document.querySelector('.electron');
   const starContainer = document.querySelector('.stars-container');
   let shootingStarExists = false;
+  getTest();
+  
 
   // Number of stars and twinkling stars
   const totalStars = 200;
@@ -113,6 +115,22 @@ $(document).ready(function() {
     }
   }
 
+
+  async function getTest() {
+    try {
+      const response = await fetch('https://ginger-eggplant-split.glitch.me/message', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  }
+
   // Handle sending a message
   function sendMessage() {
     const $input = $('.chat__conversation-panel__input');
@@ -136,6 +154,6 @@ $(document).ready(function() {
 
   // Welcome message on load
   setTimeout(() => {
-    typeBotMessage("Welcome! How can I help you today?");
+    typeBotMessage("Hey there! I'm Halim's portfolio chatbot, your gateway to getting to know him as a developer. Feel free to ask me anything about his skills, experience, or projects. Let's chat!");
   }, 500);
 });
