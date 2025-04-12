@@ -446,7 +446,7 @@
   margin-left: 7%;
   margin-right: 7%;
 }
-@media (max-width: 580px) {
+@media (max-width: 800px) {
   .contact.form {
     display: none;
   }
@@ -462,7 +462,11 @@
 .project-container img {
   margin-left: 12.5vw;
 }
-
+.project-container iframe {
+  margin-left: 12.5vw;
+  width: 75vw;
+  height: 50vh;
+}
 .container {
   background: #0e1821 #E3F2FD;
   border-radius: 4px;
@@ -927,20 +931,20 @@ body {
 }
 
 .electron {
-  width: 120vw;
-  height: 120vw;
+  width: max(120vw, 120vh);
+  height: max(120vw, 120vh);
   position: absolute;
   animation: rotation 100s infinite linear;
   z-index: -5;
   transform-origin: center;
   transform: translate(-50%, -50%);
 }
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   .electron {
     width: 120vh;
     height: 120vh;
   }
-}
+} */
 
 .dot {
   content: "";
@@ -1102,8 +1106,8 @@ body {
 
 .electron {
   position: absolute;
-  width: 120vw;
-  height: 120vw;
+  width: max(120vw, 120vh);
+  height: max(120vw, 120vh);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1114,8 +1118,8 @@ body {
 
 .learn-more:hover ~ .stars-container .electron {
   animation: spin-circle 5s infinite linear;
-  width: 100vw;
-  height: 100vw;
+  width: max(120vw, 120vh);
+  height: max(120vw, 120vh);
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
