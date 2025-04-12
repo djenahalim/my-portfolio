@@ -1,8 +1,8 @@
 new fullpage("#fullpage", {
   autoScrolling: true,
   navigation: false,
-  anchors: ["0", "1", "2", "3", "4"],
-  sectionsColor: ["#000", "#000", "#000", "#000", "#000"],
+  anchors: ["0", "1", "2", "3"],
+  sectionsColor: ["#000", "#000", "#000", "#000"],
   onLeave: (origin, destination, direction) => {
     const section = destination.item;
     const OriginalSection = origin.item;
@@ -58,19 +58,19 @@ new fullpage("#fullpage", {
       // };
     }
     if (destination.index === 3) {
-      const container1 = document.querySelectorAll(".container1");
-      tl.fromTo(
-        container1[0],
-        0.4,
-        { x: "-100", opacity: 0 },
-        { x: "0", opacity: 1 }
-      );
-      tl.fromTo(
-        container1[1],
-        0.4,
-        { x: "100", opacity: 0 },
-        { x: "0", opacity: 1 }
-      );
+      // const container1 = document.querySelectorAll(".container1");
+      // tl.fromTo(
+      //   container1[0],
+      //   0.4,
+      //   { x: "-100", opacity: 0 },
+      //   { x: "0", opacity: 1 }
+      // );
+      // tl.fromTo(
+      //   container1[1],
+      //   0.4,
+      //   { x: "100", opacity: 0 },
+      //   { x: "0", opacity: 1 }
+      // );
     }
     if (destination.index === 4) {
       const form = document.querySelector(".container");
@@ -82,20 +82,23 @@ new fullpage("#fullpage", {
   },
 });
 function addStars(electron) {
-  for (let i = 0; i < 200; i++) {
+
+  const totalStars = 300;
+  const twinklePercent = 0.4; // 30% of stars should twinkle
+  const numTwinklingStars = Math.floor(totalStars * twinklePercent);
+
+  for (let i = 0; i < totalStars; i++) {
     const random2 = Math.floor(Math.random() * 100);
     const random3 = Math.floor(Math.random() * 100);
     const random4 = Math.floor(Math.random() * 3) + 2;
+
+    const randomDelay = Math.random() * 3; // Random delay for twinkling effect
+
+    const isTwinkling = Math.random() < twinklePercent;
+    const starClass = isTwinkling ? 'dot twinkle' : 'dot';
+
     $(electron).append(
-      "<div class='dot' style=' left: " +
-        random2 +
-        "%;top: " +
-        random3 +
-        "%;  width: " +
-        random4 +
-        "px;height: " +
-        random4 +
-        "px;'></div>"
+      `<div class='${starClass}' style='left: ${random2}%; top: ${random3}%; width: ${random4}px; height: ${random4}px; --random-delay: ${randomDelay}s;'></div>`
     );
   }
 }
