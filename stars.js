@@ -6,8 +6,8 @@ $(document).ready(function() {
   
 
   // Number of stars and twinkling stars
-  const totalStars = 200;
-  const twinklePercent = 0.3; // 30% of stars should twinkle
+  const totalStars = 300;
+  const twinklePercent = 0.4; // 30% of stars should twinkle
   const numTwinklingStars = Math.floor(totalStars * twinklePercent);
 
   // Create regular stars
