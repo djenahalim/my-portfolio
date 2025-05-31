@@ -24,6 +24,10 @@
     </script>
 </head>
 <body>
+  <div id="loading-screen">
+  <div class="loader-text">Loading...</div>
+</div>
+
    <div id="blackhole">
       <div class="centerHover">
         <span>ENTER</span>
@@ -364,6 +368,19 @@
                            
         </section>
     </div>
+    <script>
+      $(document).ready(function () {
+  // Delay 1 second before hiding loader and showing page
+  setTimeout(() => {
+    $('#loading-screen').addClass('hide');
+  }, 1000); // 1 second delay
+
+  // Optional: also remove the loader after the transition
+  setTimeout(() => {
+    $('#loading-screen').remove();
+  }, 1600); // match your CSS transition duration + delay
+});
+    </script>
     <script type="text/javascript" src="fullpage.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="stars.js"></script>
