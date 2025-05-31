@@ -1521,3 +1521,25 @@ canvas {
 .section {
   background-color: transparent !important;
 }
+
+/* loading screen */
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* or a background animation if you prefer */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+#loading-screen.hide {
+  opacity: 0;
+  pointer-events: none;
+}
