@@ -35,7 +35,7 @@
   width: auto;
   height: auto;
   font-size: 33px;
-  margin-top: 30px;
+  margin-top: 50px;
   transform: translate(0%, -50%);
 }
 
@@ -119,7 +119,7 @@
 .learn-more.learn-more .button-text {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
-  top: 0;
+  /* top: 0; */
   left: 0;
   right: 0;
   bottom: 0;
@@ -989,6 +989,11 @@ body {
   height: 50vw;
   margin-top: 12.5vh;
 }
+@media only screen and (max-width: 600px) {
+  .crousel img {
+    margin-top: 5vh;
+  }
+}
 .crousel .fp-slide {
   width: 100% !important;
   height: 100%;
@@ -1059,11 +1064,56 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  height: 30%;
+  /* height: 30%; */
   font-size: 33px;
   transform: scale(0);
   opacity: 0;
   transition: transform 2s ease, opacity 2s ease;
+}
+@media only screen and (max-width: 900px) {
+  .hello-container{
+    font-size: 28px;
+  }
+  .learn-more.learn-more .button-text {
+    font-size: 23px !important;
+  }
+     .learn-more.learn-more {
+    width: 16rem;
+  }
+  
+}
+@media only screen and (max-width: 700px) {
+  .hello-container{
+    font-size: 22px;
+  }
+   .learn-more.learn-more .button-text {
+    font-size: 20px !important;
+    top: 6px;
+  }
+  .learn-more.learn-more {
+    width: 14.5rem;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .hello-container{
+    font-size: 18px;
+  }
+  .learn-more.learn-more .button-text {
+    font-size: 18px !important;
+    top: 8px;
+  }
+    .learn-more.learn-more {
+    width: 13.5rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .hello-container{
+    font-size: 15px;
+  }
+  .learn-more.learn-more .button-text {
+    /* font-size: 15px !important;
+    top: 10px; */
+  }
 }
 .hello-container.show {
   transform: scale(1);
@@ -1451,9 +1501,15 @@ body {
   z-index: 2;
 }
 
+@media (max-width: 768px) {
+  #blackhole {
+
+  }
+}
+
 .centerHover {
 	width: 255px;
-	height: 255px;
+	/* height: 255px; */
 	background-color: transparent;
 	border-radius: 50%;
 	position: absolute;
@@ -1542,4 +1598,53 @@ canvas {
 #loading-screen.hide {
   opacity: 0;
   pointer-events: none;
+}
+
+.fp-controlArrow {
+  animation: pulseMove 1.5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.fp-controlArrow.fp-prev {
+  /* Optional: adjust direction more specifically if needed */
+  left: 20px;
+}
+
+.fp-controlArrow.fp-next {
+  right: 20px;
+}
+
+@keyframes pulseMove {
+  0% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+}
+
+/* Invert movement for the previous arrow */
+.fp-controlArrow.fp-prev {
+  animation: pulseMovePrev 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseMovePrev {
+  0% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
 }
