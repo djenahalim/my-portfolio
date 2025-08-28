@@ -46,7 +46,7 @@ getTest()
   // Call API and get bot response
   async function getBotResponse(message) {
     try {
-      const response = await fetch('https://ginger-eggplant-split.glitch.me/chat', {
+      const response = await fetch('https://ai-api-61ol.onrender.com/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ getTest()
 
   async function getTest() {
     try {
-      const response = await fetch('https://ginger-eggplant-split.glitch.me/message', {
+      const response = await fetch('https://ai-api-61ol.onrender.com/message', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
