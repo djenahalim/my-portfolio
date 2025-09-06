@@ -1277,8 +1277,9 @@ body {
 }
 #chat .chat__conversation-board {
   padding: 1em 0 2em;
-  height: calc(100vh - 55px - 2em - 25px * 2 - .5em - 3em);
+  height: calc(70vh - 55px - 2em - 25px * 2 - .5em - 3em);
   overflow: auto;
+  /* margin-top: 10vh; */
 }
 #chat .chat__conversation-board__message-container.reversed {
   flex-direction: row-reverse;
@@ -1477,7 +1478,7 @@ body {
     border-radius: 0;
   }
   #chat .chat__conversation-board {
-    height: calc(100vh - 55px - 2em - .5em - 3em);
+    height: calc(90vh - 55px - 2em - .5em - 3em);
   }
   #chat .chat__conversation-board__message__options {
     display: none !important;
