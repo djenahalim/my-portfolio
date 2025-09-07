@@ -46,7 +46,7 @@ getTest()
   // Call API and get bot response
   async function getBotResponse(message) {
     try {
-      const response = await fetch('https://ai-api-61ol.onrender.com/chat', {
+      const response = await fetch('https://ginger-eggplant-split.glitch.me/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ getTest()
 
   async function getTest() {
     try {
-      const response = await fetch('https://ai-api-61ol.onrender.com/message', {
+      const response = await fetch('https://ginger-eggplant-split.glitch.me/message', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -100,6 +100,6 @@ getTest()
 
   // Welcome message on load
   setTimeout(() => {
-    typeBotMessage("Hey there! I'm Halim's portfolio chatbot, your gateway to getting to know him as a developer. Feel free to ask me anything about his skills, experience, or projects. Let's chat!");
+    typeBotMessage("Hey there! I'm Halim's portfolio chatbot, your gateway to getting to know him as a developer. Feel free to ask me anything about his skills, experience, or projects. You can also scroll right to check out his work!");
   }, 500);
 });
