@@ -230,21 +230,7 @@ function blackhole(element) {
 
 
 	$('.centerHover').on('click',function(){
-		collapse = false;
-		expanse = true;
-
-		$(this).addClass('open');
-		$('.fullpage').addClass('open');
-		setTimeout(function(){
-			$('.header .welcome').removeClass('gone');
-		}, 500);
-		$('#blackhole').css('z-index', '1');
-		setTimeout(() => {
-		$('.hello-container').show();
-		$('.hello-container').addClass('show');
-		  fullpage_api.setAllowScrolling(true);
-  		  fullpage_api.setKeyboardScrolling(true);
-		}, 500);
+		start();
 	
 	});
 	$('.centerHover').on('mouseover',function(){
@@ -292,4 +278,22 @@ function blackhole(element) {
 		loop();
 	}
 	init();
+start()
+	function start(){
+			collapse = false;
+		expanse = true;
+
+		$(this).addClass('open');
+		$('.fullpage').addClass('open');
+		setTimeout(function(){
+			$('.header .welcome').removeClass('gone');
+		}, 500);
+		$('#blackhole').css('z-index', '1');
+		setTimeout(() => {
+		$('.hello-container').show();
+		$('.hello-container').addClass('show');
+		  fullpage_api.setAllowScrolling(true);
+  		  fullpage_api.setKeyboardScrolling(true);
+		}, 500);
+	}
 }
