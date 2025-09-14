@@ -278,7 +278,7 @@ function blackhole(element) {
 		loop();
 	}
 	init();
-start()
+    start()
 	function start(){
 			collapse = false;
 		expanse = true;
